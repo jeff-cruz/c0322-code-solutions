@@ -1,0 +1,14 @@
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-style: bold;
+}
+
+h2 {
+  font-family: 'Oxygen', sans-serif;
+  font-style: italic;
+}
+
+p {
+  font-family: 'Oxygen', sans-serif;
+  line-height: 1.3em;
+}
