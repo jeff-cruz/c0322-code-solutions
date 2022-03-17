@@ -1,0 +1,26 @@
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding-top: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column-one-third {
+  width: 33%;
+}
+
+.column-one-fourth {
+  width: 25%;
+}
+
+.column-two-thirds {
+  width: 66%;
+}
+
+img {
+  width: 100%;
+}
