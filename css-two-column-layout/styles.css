@@ -1,0 +1,49 @@
+body {
+  font-family: Karla, sans-serif;
+}
+
+.container {
+  max-width: 75%;
+  margin: auto;
+}
+
+.padding {
+  padding: 50px;
+}
+
+.description {
+  color: rgb(94 94 94);
+  padding-left: 175px;
+  padding-right: 175px;
+  text-align: center;
+}
+
+div > h1 {
+  font-size: 400%;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+}
+
+.column-half {
+  flex-basis: 50%;
+}
+
+.quadrant {
+  height: 50%;
+}
+
+.textsection {
+  flex-basis: 75%;
+}
+
+h3 {
+  text-transform: uppercase;
+}
+
+p {
+  line-height: 30px;
+}
