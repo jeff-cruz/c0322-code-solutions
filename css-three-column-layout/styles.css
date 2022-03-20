@@ -1,6 +1,6 @@
 body {
   color: white;
-  background-color: rgb(29 135 255);
+  background-color: rgb(38 139 255);
   font-family: Lato, sans-serif;
   text-align: center;
 }
@@ -20,12 +20,18 @@ body {
 
 .column-one-third {
   flex-basis: 33%;
-  padding-left: 30px;
-  padding-right: 30px;
+}
+
+.row-container {
+  width: 75%;
+  margin-left: 150px;
 }
 
 .row {
   display: flex;
+}
+
+.justify-content {
   justify-content: center;
 }
 
@@ -47,6 +53,10 @@ img {
   background-color: white;
 }
 
+h1 {
+  padding-bottom: 15px;
+}
+
 h2 {
   text-align: center;
 }
@@ -58,4 +68,17 @@ h3 {
 p {
   font-size: 14px;
   text-align: center;
+}
+
+.left-container {
+  margin-right: 75px;
+}
+
+.middle-container {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.right-container {
+  margin-left: 75px;
 }
