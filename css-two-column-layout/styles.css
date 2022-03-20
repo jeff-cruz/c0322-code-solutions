@@ -1,0 +1,76 @@
+body {
+  font-family: Karla, sans-serif;
+}
+
+.container {
+  max-width: 75%;
+  margin: auto;
+}
+
+.padding {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.description {
+  color: rgb(94 94 94);
+  padding-left: 175px;
+  padding-right: 175px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+div > h1 {
+  font-size: 400%;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+}
+
+.column-half {
+  flex-basis: 50%;
+}
+
+.quadrant {
+  height: 50%;
+  width: 75%;
+  margin-left: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.textsection {
+  width: 100%;
+  position: relative;
+  top: 20px;
+  left: 10px;
+}
+
+h3 {
+  text-transform: uppercase;
+}
+
+p {
+  line-height: 30px;
+  color: rgb(94 94 94);
+}
+
+.learn-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+button {
+  border: 2px solid rgb(215 0 0);
+  color: rgb(230 35 0);
+  background-color: white;
+  font-family: Karla, sans-serif;
+  text-transform: uppercase;
+  padding: 15px 60px;
+  font-weight: 700;
+  font-size: 16px;
+}
