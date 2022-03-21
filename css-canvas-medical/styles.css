@@ -9,6 +9,8 @@ body {
 
 .row {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .padding-header {
@@ -17,7 +19,6 @@ body {
 }
 
 .header {
-  display: flex;
   justify-content: space-between;
   padding-bottom: 20px;
   border-bottom: 2px solid rgb(236 236 236);
@@ -32,7 +33,6 @@ body {
 }
 
 .header-buttons {
-  display: flex;
   padding-right: 160px;
 }
 
@@ -123,8 +123,8 @@ button.get-started {
   width: 50%;
 }
 
-.title-container {
-  margin-top: 0;
+.column-full {
+  width: 100%;
 }
 
 .clinician-container {
@@ -132,7 +132,7 @@ button.get-started {
   padding-bottom: 100px;
 }
 
-.title-container > h1 {
+.column-full > h1 {
   color: rgb(100 100 100);
   display: flex;
   flex-basis: 100%;
@@ -141,7 +141,7 @@ button.get-started {
   font-weight: 400;
 }
 
-.title-container > p {
+.column-full > p {
   color: grey;
   font-family: Avenir, sans-serif;
   display: flex;
