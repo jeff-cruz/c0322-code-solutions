@@ -185,18 +185,20 @@ button.get-started {
 
 .logo-container {
   padding-left: 75px;
+  padding-top: 25px;
+  width: 100%;
 }
 
 .canvas-container {
   background-color: rgb(100 100 100);
   padding-top: 75px;
-  padding-bottom: 150px;
+  padding-bottom: 125px;
   font-family: Avenir, sans-serif;
   color: white;
 }
 
 .white-logo {
-  width: 10%;
+  width: 25%;
 }
 
 .address {
@@ -205,28 +207,6 @@ button.get-started {
   font-size: 14px;
   line-height: 20px;
 }
-
-/* .company-container {
-  display: flex;
-  flex-direction: column;
-  width: 100px;
-  float: right;
-  position: relative;
-  right: 600px;
-  bottom: 190px;
-  text-align: left;
-}
-
-.product-container {
-  display: flex;
-  flex-direction: column;
-  width: 150px;
-  float: right;
-  position: relative;
-  right: 150px;
-  bottom: 190px;
-  text-align: left;
-} */
 
 .canvas-buttons {
   color: white;
@@ -237,6 +217,15 @@ button.get-started {
   margin-right: 10px;
   margin-bottom: 10px;
   padding-left: 0;
+}
+
+.company-container,
+.product-container {
+  width: 135px;
+}
+
+.product-container {
+  margin-left: 200px;
 }
 
 .company-container h3,
