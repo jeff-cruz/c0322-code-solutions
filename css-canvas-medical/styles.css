@@ -86,13 +86,13 @@ body {
   color: white;
 }
 
-.hero-text-container > h1 {
+.row > h1 {
   font-family: "Tiempos Headline", sans-serif;
   font-weight: 400;
   font-size: 250%;
 }
 
-.hero-text-container > p {
+.row > p {
   font-family: Avenir, sans-serif;
   line-height: 30px;
 }
@@ -109,10 +109,6 @@ button.get-started {
   font-weight: lighter;
   position: relative;
   top: 15px;
-}
-
-.center {
-  display: flex;
 }
 
 .grey-background {
@@ -134,9 +130,9 @@ button.get-started {
 
 .column-full > h1 {
   color: rgb(100 100 100);
-  display: flex;
   flex-basis: 100%;
   justify-content: center;
+  text-align: center;
   font-family: "Tiempos Headline", sans-serif;
   font-weight: 400;
 }
@@ -144,13 +140,12 @@ button.get-started {
 .column-full > p {
   color: grey;
   font-family: Avenir, sans-serif;
-  display: flex;
   justify-content: center;
   text-align: center;
 }
 
 .column-half > p {
-  display: flex;
+  text-align: center;
   justify-content: center;
   font-family: Avenir, sans-serif;
   color: grey;
@@ -179,7 +174,6 @@ button.get-started {
 }
 
 .button-container {
-  display: flex;
   margin-right: 150px;
 }
 
