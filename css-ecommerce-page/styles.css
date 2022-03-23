@@ -1,0 +1,71 @@
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+.container {
+  max-width: 80%;
+  margin: auto;
+  padding-top: 0;
+}
+
+.row {
+  display: flex;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.column-full {
+  width: 100%;
+}
+
+.column-one.fifth {
+  width: 20%;
+}
+
+.center {
+  text-align: center;
+}
+
+.justify-content {
+  justify-content: center;
+}
+
+.space {
+  justify-content: space-evenly;
+}
+
+.grey {
+  color: lightgrey;
+}
+
+img {
+  height: 300px;
+  width: 100%;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+span.tan-background {
+  background-color: rgb(255 235 211);
+}
+
+span.strikethrough {
+  text-decoration: line-through;
+}
+
+.brand-name,
+.price {
+  text-align: left;
+}
+
+.price {
+  font-size: 14px;
+}
+
+.top-padding {
+  padding-top: 15px;
+}
