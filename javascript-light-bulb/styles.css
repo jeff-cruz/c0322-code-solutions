@@ -1,0 +1,43 @@
+body {
+  max-width: 100%;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 0 none;
+}
+
+body.off {
+  background-color: rgb(27 27 27);
+}
+
+body.on {
+  background-color: rgb(255 253 250);
+}
+
+.light-button.off {
+  background-color: darkgrey;
+  box-shadow: 0 -10px 0 10px black;
+}
+
+.light-button.on {
+  background-color: yellow;
+  box-shadow: 0 0 100px 0 rgb(255 226 64);
+}
+
+.light-button:focus {
+  outline: none;
+}
+
+.light-button:active {
+  background-color: yellow;
+}
