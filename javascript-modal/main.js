@@ -6,17 +6,10 @@ $closeButton.addEventListener('click', clickClose);
 
 var $overlay = document.querySelector('.overlay');
 
-var noModal = true;
 function clickOpen(event) {
-  if (noModal !== true) {
-    $overlay.className = 'overlay no-display';
-  }
   $overlay.className = 'overlay display';
 }
 
 function clickClose(event) {
-  if (noModal !== true) {
-    $overlay.className = 'overlay display';
-  }
   $overlay.className = 'overlay no-display';
 }
