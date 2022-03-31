@@ -1,23 +1,25 @@
-// var $letters = document.querySelectorAll('span');
+var $letters = document.querySelectorAll('span');
 
-// for (var i = 0; i < $letters.length; i++) {
-//   console.log($letters.forEach());
-// }
+for (var i = 0; i < $letters.length; i++) {
+  $letters[i].addEventListener('keydown', logKey);
+}
 
-// function logKey(event) {
-//   console.log('keydown');
-// }
+document.addEventListener('keydown', logKey);
+var string = 'grumpy wizards make toxic brew';
 
-// var totalSpan = 30;
-// var string = 'grumpy wizards make toxic brew';
+function logKey(event) {
+  for (var i = 0; i <= string.length; i++) {
+    $letters[i].className = 'underline';
+    if (event.key === string[i]) {
+      $letters[i].className = 'green';
+    } else {
+      $letters[i].className = 'red';
+    }
+  }
+}
 
-// function logKey(keydown) {
-// //   console.log('typing...');
-// // for (var i = 0; i < totalSpan; i++) {
-// //   if (input === $letter[i]) {
-// //     $letter.className = 'green';
-// //   } else if (input !== $letter[i]) {
-// //     $letter.className = 'red';
-// //   }
-// // }
-// }
+// once keydown event takes place, begin the function
+// access an index of the string
+// if the event.key matches the character at the the string index, highlight green
+// if the event.key does not match the character at the string index, hightlight red
+// and re-iterate through the same index
