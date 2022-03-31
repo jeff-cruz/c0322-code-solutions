@@ -1,25 +1,25 @@
 var $letters = document.querySelectorAll('span');
-
-for (var i = 0; i < $letters.length; i++) {
-  $letters[i].addEventListener('keydown', logKey);
-}
-
 document.addEventListener('keydown', logKey);
-var string = 'grumpy wizards make toxic brew';
+var i = 0;
 
 function logKey(event) {
-  for (var i = 0; i <= string.length; i++) {
+  for (var letter of $letters) {
+    letter = $letters[i].innerHTML;
     $letters[i].className = 'underline';
-    if (event.key === string[i]) {
+
+    if (event.key === letter) {
       $letters[i].className = 'green';
+      $letters[i + 1].className = 'underline';
+      i++;
+      break;
     } else {
-      $letters[i].className = 'red';
+      $letters[i].className = 'red underline-red';
     }
   }
 }
 
-// once keydown event takes place, begin the function
-// access an index of the string
-// if the event.key matches the character at the the string index, highlight green
-// if the event.key does not match the character at the string index, hightlight red
-// and re-iterate through the same index
+// access array, get innerHTML of object at index of array
+// if innerHTML value === event.key => turn letter green AND move underline to next index
+// break to stop iteration and go next
+//      else turn letter red AND stay in same index AND turn underline red
+// for: of + counter variable (declared before for: of after function)

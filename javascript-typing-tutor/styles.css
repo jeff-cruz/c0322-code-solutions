@@ -6,6 +6,9 @@
   letter-spacing: normal;
   width: 100%;
   text-align: center;
+  white-space: pre;
+  display: flex;
+  justify-content: center;
 }
 
 span {
@@ -27,6 +30,6 @@ span {
   border-bottom: 5px solid black;
 }
 
-.underline-wrong {
+.underline-red {
   border-bottom: 5px solid red;
 }
