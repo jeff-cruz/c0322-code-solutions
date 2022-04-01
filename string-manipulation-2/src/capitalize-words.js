@@ -1,21 +1,23 @@
 /* exported capitalizeWords */
 function capitalizeWords(string) {
-  var words = string.split(' ');
-  var output = [];
-  for (var word of words) {
-    var firstLetter = word.substring(0, 1).toUpperCase();
-    var otherLetters = word.substring(1).toLowerCase();
-    var wholeWord = firstLetter + otherLetters;
-    output.push(wholeWord);
+  var phrase = '';
+  var space = ' ';
+  var i = 0;
+  for (var words in string) {
+    words = string.split(' ');
+    if (i === words.length - 1) {
+      var firstLetter = words[i].slice(0, 1).toUpperCase();
+      var otherLetters = words[i].slice(1, string.length).toLowerCase();
+      var wholeWord = firstLetter + otherLetters;
+      phrase += wholeWord;
+      i++;
+    } else if (i < words.length) {
+      firstLetter = words[i].slice(0, 1).toUpperCase();
+      otherLetters = words[i].slice(1, string.length).toLowerCase();
+      wholeWord = firstLetter + otherLetters;
+      phrase += wholeWord + space;
+      i++;
+    }
   }
-  return output.join(' ');
+  return phrase;
 }
-
-// create new variable words assigned to string splitting each word by itself into an array
-// create a new variable output as an empty array
-// access each string in the array of strings
-// create a new variable firstLetter and assign it to the first index of the string being capitalized
-// create a new variable otherLetters and assign it to the rest of the words being lowercased
-// create a new variable wholeWord concatenating firstLetter and otherLetters
-// push wholeWord into the output array
-// return the output array back into a string with spaces between the words
