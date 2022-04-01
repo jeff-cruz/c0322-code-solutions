@@ -3,18 +3,15 @@ document.addEventListener('keydown', logKey);
 var i = 0;
 
 function logKey(event) {
-  for (var letter of $letters) {
-    letter = $letters[i].innerHTML;
-    $letters[i].className = 'underline';
+  var letter = $letters[i].innerHTML;
+  $letters[i].className = 'underline';
 
-    if (event.key === letter) {
-      $letters[i].className = 'green';
-      $letters[i + 1].className = 'underline';
-      i++;
-      break;
-    } else {
-      $letters[i].className = 'red underline-red';
-    }
+  if (event.key === letter) {
+    $letters[i].className = 'green';
+    $letters[i + 1].className = 'underline';
+    i++;
+  } else {
+    $letters[i].className = 'red underline-red';
   }
 }
 
