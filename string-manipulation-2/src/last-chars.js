@@ -1,7 +1,7 @@
 /* exported lastChars */
 function lastChars(length, string) {
-  for (var letters of string) {
-    letters = string.substring(string.length - length, string.length);
+  for (var i = 0; i < string.length; i++) {
+    var letters = string.substring(string.length - length, string.length);
   }
   return letters;
 

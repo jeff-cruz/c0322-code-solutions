@@ -1,8 +1,8 @@
 /* exported firstChars */
 function firstChars(length, string) {
   if (string.length > 0) {
-    for (var letters of string) {
-      letters = string.substring(0, length);
+    for (var i = 0; i < string.length; i++) {
+      var letters = string.substring(0, length);
     }
     return letters;
   }
