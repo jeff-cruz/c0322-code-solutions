@@ -1,0 +1,35 @@
+.text-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  letter-spacing: normal;
+  width: 100%;
+  text-align: center;
+  white-space: pre;
+  display: flex;
+  justify-content: center;
+}
+
+span {
+  font-size: 48px;
+  font-weight: 900;
+  font-family: monospace;
+  display: inline;
+}
+
+.green {
+  color: lime;
+}
+
+.red {
+  color: red;
+}
+
+.underline {
+  border-bottom: 5px solid black;
+}
+
+.underline-red {
+  border-bottom: 5px solid red;
+}
