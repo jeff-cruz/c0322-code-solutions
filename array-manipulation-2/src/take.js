@@ -2,7 +2,7 @@
 function take(array, count) {
   var newArray = [];
   for (var i = 0; i < count; i++) {
-    if (array[i] === newArray[i]) {
+    if (array.length === 0) {
       return array;
     } else if (count > 0) {
       newArray.push(array[i]);
