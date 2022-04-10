@@ -14,4 +14,4 @@ function reverseWords(string) {
 // split the string by sections of words
 // for every word, split word by letter
 // for every index, letters are split up
-// for every index,
+// for every index
