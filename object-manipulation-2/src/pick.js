@@ -1,12 +1,12 @@
 /* exported pick */
 function pick(source, keys) {
   var newObject = {};
+  var propertyNames = Object.keys(source);
+  var propertyValues = Object.values(source);
 
-  for (var property in source) {
-    for (var i = 0; i < keys.length; i++) {
-      if (property === keys[i]) {
-        newObject[source[property]] = source[property];
-      }
+  for (var i = 0; i < propertyNames.length; i++) {
+    if (keys.indexOf(propertyNames[i]) !== -1) {
+      newObject[propertyNames[i]] = propertyValues[i];
     }
   }
   return newObject;
