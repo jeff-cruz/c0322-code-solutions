@@ -1,17 +1,25 @@
 /* exported reverseWords */
 function reverseWords(string) {
-  var newString = '';
+  var newWord = '';
+  var newPhrase = '';
   var splitString = string.split(' ');
   for (var i = 0; i < splitString.length; i++) {
-    var words = splitString[i];
-    var letters = words.split('');
+    if (i === 0) {
+      newWord = splitString[i];
+    } else if (i > 0 && i < splitString.length - 1) {
+      newWord = splitString[i] + ' ';
+    } else if (i === splitString.length - 1) {
+      newWord = splitString[i] + ' ';
+    }
+    var letters = newWord.split('');
+    for (var j = letters.length - 1; j >= 0; j--) {
+      newPhrase += letters[j];
+    }
   }
-  for (var j = letters.length; j > letters.length; j--) {
-  }
-  console.log(words);
+  return newPhrase;
 }
 
 // split the string by sections of words
 // for every word, split word by letter
 // for every index, letters are split up
-// for every index
+// for every index, letters are reversed
