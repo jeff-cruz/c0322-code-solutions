@@ -16,7 +16,7 @@ function titleCase(string) {
       fullWord = firstIndexCapital + restOfWord + ' ';
       newTitle += fullWord;
 
-    // words that are in the last index without a space
+    // words that are in the last index without a spacegit
     } else {
       fullWord = firstIndexCapital + restOfWord;
       newTitle += fullWord;
