@@ -1,26 +1,20 @@
 /* exported pick */
 function pick(source, keys) {
-  var array = [];
-  var values = Object.values(source);
-  var sourceEntries = Object.entries(source);
-  for (var i = 0; i < keys.length; i++) {
-    for (var j = 0; j < sourceEntries.length; j++) {
-      if (keys[i] === sourceEntries[j][0] && values[j] !== undefined) {
-        array.push(sourceEntries[j]);
+  var newObject = {};
+  for (var property in source) {
+    for (var i = 0; i < keys.length; i++) {
+      if (keys[i] === property && source[property] !== undefined) {
+        newObject[property] = source[property];
       }
     }
   }
-  return Object.fromEntries(array);
+  return newObject;
 }
 
-// create new array variable assigned to an empty array
-// create new values variable assigned to the values of the source object
-// create new sourceEntries variable assigned to the key/value pairings of source
+// create new newObject variable assigned to an empty object
+// iterate through source object
 // iterate through keys array
-// iterate through sourceEntries array
-// if name in keys index is strictly equal to
-//    a name in sourceEntries index at 0
-//    AND none of the values of a source property does not strictly equal undefined
-// push the key/value pairing in the sourceEntries index to the new array
-// the result of the fromEntries method of the Object object being called with argument of array
-// return the result of the method
+// if name in keys index is strictly equal to a property name
+//    AND none of the values of a property of source does not strictly equal undefined
+// create newObject property and assign value of property of source
+// return newObject

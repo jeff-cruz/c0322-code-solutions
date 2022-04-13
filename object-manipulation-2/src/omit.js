@@ -1,21 +1,20 @@
 /* exported omit */
 function omit(source, keys) {
-  var newObject = {
-    ...source
-  };
-  for (var key in source) {
+  var newObject = {};
+  for (var property in source) {
     for (var i = 0; i < keys.length; i++) {
-      if (keys[i] !== key) {
-        delete newObject[keys[i]];
+      if (property !== keys[i]) {
+        newObject[property] = source[property];
       }
+      delete newObject[keys[i]];
     }
   }
   return newObject;
 }
 
-// create newObject variable assigned to an object with the same properties as source
-// iterate through each key in source
+// create newObject variable assigned to an empty object
+// iterate through each property in source
 // iterate through each index of keys
-// if the key is not listed in keys
-// delete that key from newObject
+// create newObject properties and assign to value of property of source
+// any keys that match property name, delete that key from newObject
 // return newObject

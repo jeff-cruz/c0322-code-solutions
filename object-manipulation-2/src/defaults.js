@@ -1,8 +1,13 @@
 /* exported defaults */
 function defaults(target, source) {
-  Object.setPrototypeOf(target, source);
+  for (var key in source) {
+    if (source[key] !== target[key] && target[key] === undefined) {
+      target[key] = source[key];
+    }
+  }
 }
 
-// Copy properties of the target object to the source object
-// setPrototypeMethodOf of Object being called with 2 arguments
-// target and source
+// for of loop , for (var key of source)
+// if source[key] !== target[key] && target[key] === undefined
+// create the property in target = source[key];
+// no return

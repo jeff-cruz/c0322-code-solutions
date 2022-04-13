@@ -1,13 +1,14 @@
 /* exported invert */
 function invert(source) {
-  var objectEntries = Object.entries(source);
-  for (var i = 0; i < objectEntries.length; i++) {
-    objectEntries[i].reverse();
+  var newObject = {};
+  for (var property in source) {
+    newObject[source[property]] = property;
   }
-  return Object.fromEntries(objectEntries);
+  return newObject;
 }
 
-// create new variable objectEntries assigned to all key/value pairings in source
-// iterate through objectEntries and swap key/value pairings
-// create new object from objectEntries using Object.fromEntries
-// return result of that method
+// create new object and assign to newObject variable
+// iterate through properties of source
+// create newObject property names using bracket notation property of source of newObject
+// assign to property
+// return newObject
