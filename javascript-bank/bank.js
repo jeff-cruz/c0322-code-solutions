@@ -20,7 +20,7 @@ Bank.prototype.openAccount = function (holder, balance) {
 Bank.prototype.getAccount = function (number) {
   if (Number.isInteger(number) && number > 0) {
     for (var account in this.accounts) {
-      if (number === account[this.nextAccountNumber]) {
+      if (number === this.accounts[account].number) {
         return this.accounts[account];
       }
     }
@@ -33,8 +33,8 @@ Bank.prototype.getTotalAssets = function () {
     return 0;
   } else {
     var allAccountBalances = 0;
-    for (var account in this.accounts) {
-      allAccountBalances += account[this.transactions].getBalance();
+    for (var i = 0; i < this.accounts.length; i++) {
+      allAccountBalances += this.accounts[i].getBalance();
     }
   }
   return allAccountBalances;
