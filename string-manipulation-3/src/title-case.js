@@ -5,24 +5,25 @@ function titleCase(string) {
   var fullWord = '';
   var minorWords = ['and', 'or', 'nor', 'but', 'a', 'an', 'the', 'as', 'at', 'by', 'for', 'in', 'of', 'on', 'per', 'to', 'javascript', 'api'];
 
-  for (var i = 0; i < words.length; i++) {
-      console.log(minorWord);
-      // var firstIndexCapital = words[i][0].toUpperCase();
-      // var restOfWord = words[i].substring(1);
+  for (var i = 0; i < minorWords.length; i++) {
+    if (!(minorWords.includes(words[i]))) {
+      var letters = words[i].split('');
+      var capitalLetter = letters[0].toUpperCase();
+      var incompleteWord = words[i].slice(1);
+      fullWord = capitalLetter + incompleteWord;
 
-      // if (i !== words.length - 1) {
-      //   fullWord = firstIndexCapital + restOfWord + ' ';
-      //   newTitle += fullWord;
-      // } else {
-      //   fullWord = firstIndexCapital + restOfWord;
-      //   newTitle += fullWord;
-      // }
-      // }
+      if (words[i] !== string.length - 1) {
+        newTitle += fullWord + ' ';
+      }
+    } else if (minorWords.includes(words[i])) {
+      newTitle += words[i] + ' ';
     }
   }
-  // console.log(newTitle);
-  // return newTitle;
+  return newTitle;
 }
+// console.log(newTitle);
+//   // return newTitle;
+// }
 
 // Capitalize the first word of the title and of any subtitle.
 // Capitalize all “major” words(nouns, verbs, adjectives, adverbs, and pronouns) in the title, including the second part of hyphenated major words(e.g., Self - Report not Self - report).
