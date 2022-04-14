@@ -3,27 +3,25 @@ function titleCase(string) {
   var words = string.toLowerCase().split(' ');
   var newTitle = '';
   var fullWord = '';
-  var minorWords = ['and', 'or', 'nor', 'but', 'a', 'an', 'the', 'as', 'at', 'by', 'for', 'in', 'of', 'on', 'per', 'to', 'JavaScript', 'API'];
+  var minorWords = ['and', 'or', 'nor', 'but', 'a', 'an', 'the', 'as', 'at', 'by', 'for', 'in', 'of', 'on', 'per', 'to', 'javascript', 'api'];
 
   for (var i = 0; i < words.length; i++) {
-    if (!(words[i].includes(minorWords))) {
-      var firstIndexCapital = words[i][0].toUpperCase();
-      var restOfWord = words[i].substring(1);
-    }
+      console.log(minorWord);
+      // var firstIndexCapital = words[i][0].toUpperCase();
+      // var restOfWord = words[i].substring(1);
 
-    // words that are in any index other than the last index with a space
-    if (i !== words.length - 1) {
-      fullWord = firstIndexCapital + restOfWord + ' ';
-      newTitle += fullWord;
-
-    // words that are in the last index without a space
-    } else {
-      fullWord = firstIndexCapital + restOfWord;
-      newTitle += fullWord;
+      // if (i !== words.length - 1) {
+      //   fullWord = firstIndexCapital + restOfWord + ' ';
+      //   newTitle += fullWord;
+      // } else {
+      //   fullWord = firstIndexCapital + restOfWord;
+      //   newTitle += fullWord;
+      // }
+      // }
     }
   }
-  console.log(newTitle);
-  return newTitle;
+  // console.log(newTitle);
+  // return newTitle;
 }
 
 // Capitalize the first word of the title and of any subtitle.
