@@ -15,14 +15,16 @@ function titleCase(string) {
     } else if (word === 'javascript:') {
       word = 'JavaScript:';
       newTitle += word;
-    } else if (word === words[0]) {
-      word = word.replace(word[0], word[0].toUpperCase());
+    } else
+    // problem THE statement
+    if (word === words[0]) {
+      word = words[0].charAt(0).toUpperCase() + words[0].substring(1);
       newTitle += word;
     } else if (words[counter - 1].includes(':')) {
       word = word.replace(word[0], word[0].toUpperCase());
       newTitle += word;
-    } else if ((words === 'and') || (word === 'or') || (word === 'nor') || (word === 'but') || (word === 'a') || (word === 'an') ||
-    (word === 'the') || (word === 'as') || (word === 'at') || (word === 'by') || (word === 'for') || (word === 'in') || (word === 'of') ||
+    } else if ((word === 'the') || (word === 'and') || (word === 'or') || (word === 'nor') || (word === 'but') || (word === 'a') || (word === 'an') ||
+    (word === 'as') || (word === 'at') || (word === 'by') || (word === 'for') || (word === 'in') || (word === 'of') ||
     (word === 'in') || (word === 'of') || (word === 'on') || (word === 'per') || (word === 'to')) {
       newTitle += word;
     } else {
