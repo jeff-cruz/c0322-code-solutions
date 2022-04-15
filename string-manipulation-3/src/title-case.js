@@ -2,31 +2,42 @@
 function titleCase(string) {
   var words = string.toLowerCase().split(' ');
   var newTitle = '';
-  var fullWord = '';
-  var minorWords = ['and', 'or', 'nor', 'but', 'a', 'an', 'the', 'as', 'at', 'by', 'for', 'in', 'of', 'on', 'per', 'to', 'javascript', 'api'];
+  var minorWords = ['and', 'or', 'nor', 'but', 'a', 'an', 'the', 'as', 'at', 'by', 'for', 'in', 'of', 'on', 'per', 'to'];
 
-  for (var i = 0; i < minorWords.length; i++) {
-    if (!(minorWords.includes(words[i]))) {
-      var letters = words[i].split('');
-      var capitalLetter = letters[0].toUpperCase();
-      var incompleteWord = words[i].slice(1);
-      fullWord = capitalLetter + incompleteWord;
-
-      if (words[i] !== string.length - 1) {
-        newTitle += fullWord + ' ';
-      }
-    } else if (minorWords.includes(words[i])) {
-      newTitle += words[i] + ' ';
+  var counter = 0;
+  for (var word of words) {
+    if (word === 'api') {
+      word = 'API';
+      newTitle += word;
+    } else if (word === 'javascript') {
+      word = 'JavaScript';
+      newTitle += word;
+    } else if (word === 'javascript:') {
+      word = 'JavaScript:';
+      newTitle += word;
+    } else if (word === words[0]) {
+      word = word.replace(word[0], word[0].toUpperCase());
+      newTitle += word;
+    } else if (words[counter - 1].includes(':')) {
+      word = word.replace(word[0], word[0].toUpperCase());
+      newTitle += word;
+    } else if ((words === 'and') || (word === 'or') || (word === 'nor') || (word === 'but') || (word === 'a') || (word === 'an') ||
+    (word === 'the') || (word === 'as') || (word === 'at') || (word === 'by') || (word === 'for') || (word === 'in') || (word === 'of') ||
+    (word === 'in') || (word === 'of') || (word === 'on') || (word === 'per') || (word === 'to')) {
+      newTitle += word;
+    } else {
+      word = word.replace(word[0], word[0].toUpperCase());
+      newTitle += word;
     }
+    counter++;
+    newTitle += ' ';
   }
+  newTitle = newTitle.trim();
+  console.log(newTitle);
   return newTitle;
 }
-// console.log(newTitle);
-//   // return newTitle;
-// }
 
-// Capitalize the first word of the title and of any subtitle.
-// Capitalize all “major” words(nouns, verbs, adjectives, adverbs, and pronouns) in the title, including the second part of hyphenated major words(e.g., Self - Report not Self - report).
-// Capitalize all words of four letters or more.
-// JavaScript is always cased JavaScript.
-// API is a "known" acronym.
+// words[0].charAt(0).toUpperCase() + words[0].substring(1);
+// if words[0] = 'J' then 'JavaScript:'
+// set words[1] = 'The';
+// if statements, javascript, api, javascript:
