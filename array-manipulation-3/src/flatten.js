@@ -2,20 +2,14 @@
 function flatten(array) {
   var newArray = [];
   for (var i = 0; i < array.length; i++) {
-    if (Array.isArray([array[i]])) {
-      for (var j = 0; j < array[i].length; j++) {
-        if (Array.isArray([array[i][j]])) {
-          // newArray.push(array[i][j]); }
-      }
-    } else {
-      newArray.push(array[i]);
+    var currentIndex = array[i];
+    if (!(Array.isArray(currentIndex))) {
+      newArray.push(currentIndex);
     }
   }
-  return newArray;
 }
 
-// create new variable newArray assigned to an empty array
-// iterate through array
-// if an index of the array is an array
-// iterate through the array of that index
-// if
+// create empty array assign to new variable
+// loop through array
+// create a new variable currentIndex assigned to array at i
+// if array is not an array, push index to new array
