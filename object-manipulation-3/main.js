@@ -326,6 +326,10 @@ function playGame(players) {
   }
 
   var winner = players[highestWorthIndex];
+  // console.log('Donatello\'s card worth: ', players[0].worth);
+  // console.log('Leonardo\'s card worth: ', players[1].worth);
+  // console.log('Raphael\'s card worth: ', players[2].worth);
+  // console.log('MichaelAngelo\'s card worth: ', players[3].worth);
   console.log(winner.name, 'is the winner!');
 }
 
