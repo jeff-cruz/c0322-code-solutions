@@ -14,269 +14,36 @@ var players = [
     name: 'MichaelAngelo'
   }];
 
-// deck of cards
-var cards = [
-  {
-    rank: 'Ace',
-    suit: 'clubs',
-    worth: 11
-  },
-  {
-    rank: 'Ace',
-    suit: 'diamonds',
-    worth: 11
-  },
-  {
-    rank: 'Ace',
-    suit: 'hearts',
-    worth: 11
-  },
-  {
-    rank: 'Ace',
-    suit: 'spades',
-    worth: 11
-  },
-  {
-    rank: '2',
-    suit: 'clubs',
-    worth: 2
-  },
-  {
-    rank: '2',
-    suit: 'diamonds',
-    worth: 2
-  },
-  {
-    rank: '2',
-    suit: 'hearts',
-    worth: 2
-  },
-  {
-    rank: '2',
-    suit: 'spades',
-    worth: 2
-  },
-  {
-    rank: '3',
-    suit: 'clubs',
-    worth: 3
-  },
-  {
-    rank: '3',
-    suit: 'diamonds',
-    worth: 3
-  },
-  {
-    rank: '3',
-    suit: 'hearts',
-    worth: 3
-  },
-  {
-    rank: '3',
-    suit: 'spades',
-    worth: 3
-  },
-  {
-    rank: '4',
-    suit: 'clubs',
-    worth: 4
-  },
-  {
-    rank: '4',
-    suit: 'diamonds',
-    worth: 4
-  },
-  {
-    rank: '4',
-    suit: 'hearts',
-    worth: 4
-  },
-  {
-    rank: '4',
-    suit: 'spades',
-    worth: 4
-  },
-  {
-    rank: '5',
-    suit: 'clubs',
-    worth: 5
-  },
-  {
-    rank: '5',
-    suit: 'diamonds',
-    worth: 5
-  },
-  {
-    rank: '5',
-    suit: 'hearts',
-    worth: 5
-  },
-  {
-    rank: '5',
-    suit: 'spades',
-    worth: 5
-  },
-  {
-    rank: '6',
-    suit: 'clubs',
-    worth: 6
-  },
-  {
-    rank: '6',
-    suit: 'diamonds',
-    worth: 6
-  },
-  {
-    rank: '6',
-    suit: 'hearts',
-    worth: 6
-  },
-  {
-    rank: '6',
-    suit: 'spades',
-    worth: 6
-  },
-  {
-    rank: '7',
-    suit: 'clubs',
-    worth: 7
-  },
-  {
-    rank: '7',
-    suit: 'diamonds',
-    worth: 7
-  },
-  {
-    rank: '7',
-    suit: 'hearts',
-    worth: 7
-  },
-  {
-    rank: '7',
-    suit: 'spades',
-    worth: 7
-  },
-  {
-    rank: '8',
-    suit: 'clubs',
-    worth: 8
-  },
-  {
-    rank: '8',
-    suit: 'diamonds',
-    worth: 8
-  },
-  {
-    rank: '8',
-    suit: 'hearts',
-    worth: 8
-  },
-  {
-    rank: '8',
-    suit: 'spades',
-    worth: 8
-  },
-  {
-    rank: '9',
-    suit: 'clubs',
-    worth: 9
-  },
-  {
-    rank: '9',
-    suit: 'diamonds',
-    worth: 9
-  },
-  {
-    rank: '9',
-    suit: 'hearts',
-    worth: 9
-  },
-  {
-    rank: '9',
-    suit: 'spades',
-    worth: 9
-  },
-  {
-    rank: '10',
-    suit: 'clubs',
-    worth: 10
-  },
-  {
-    rank: '10',
-    suit: 'diamonds',
-    worth: 10
-  },
-  {
-    rank: '10',
-    suit: 'hearts',
-    worth: 10
-  },
-  {
-    rank: '10',
-    suit: 'spades',
-    worth: 10
-  },
-  {
-    rank: 'Jack',
-    suit: 'clubs',
-    worth: 10
-  },
-  {
-    rank: 'Jack',
-    suit: 'diamonds',
-    worth: 10
-  },
-  {
-    rank: 'Jack',
-    suit: 'hearts',
-    worth: 10
-  },
-  {
-    rank: 'Jack',
-    suit: 'spades',
-    worth: 10
-  },
-  {
-    rank: 'Queen',
-    suit: 'clubs',
-    worth: 10
-  },
-  {
-    rank: 'Queen',
-    suit: 'diamonds',
-    worth: 10
-  },
-  {
-    rank: 'Queen',
-    suit: 'hearts',
-    worth: 10
-  },
-  {
-    rank: 'Queen',
-    suit: 'spades',
-    worth: 10
-  },
-  {
-    rank: 'King',
-    suit: 'clubs',
-    worth: 10
-  },
-  {
-    rank: 'King',
-    suit: 'diamonds',
-    worth: 10
-  },
-  {
-    rank: 'King',
-    suit: 'hearts',
-    worth: 10
-  },
-  {
-    rank: 'King',
-    suit: 'spades',
-    worth: 10
+var ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace'];
+var suits = ['clubs', 'diamonds', 'hearts', 'spades'];
+var cards = [];
+
+// create card
+function createCard(rank, suit, worth) {
+  var card = {
+    rank: rank,
+    suit: suit,
+    worth: worth
+  };
+  return card;
+}
+
+// create deck of cards
+for (var i = 0; i < suits.length; i++) {
+  for (var j = 0; j < ranks.length; j++) {
+    var rank = ranks[j];
+    var suit = suits[i];
+    var worth = ranks[j];
+    if (_.isString(ranks[j])) {
+      if (ranks[j].length >= 4) {
+        worth = 10;
+      } else {
+        worth = 11;
+      }
+    }
+    cards.push(createCard(rank, suit, worth));
   }
-];
+}
 
 // shuffle cards and deal cards
 function shuffleThenDeal(cards) {
@@ -336,12 +103,22 @@ function playGame(players) {
 playGame(players);
 
 // 1.Create a collection of four objects that represent players. Each player has a unique name and a hand to hold cards in
-//    - create an array named players, each index being an object with a name property and a name value
+//    - create an array named players
 // 2. Create a collection of fifty - two objects that represent a standard 52 - card deck.Each card should have a rank(Ace, 2, 3, ...King) and a suit(clubs, diamonds, hearts, spades).
-//    - create an array named cards, each index being an object with:
-//        - a rank property with a string value of the name of the card
+//    - create a function named createCard, parameters of rank, suit, worth
+//        - a rank property with a string or number value of the name of the card
 //        - a suit property with a string value of the suit of card
 //        - a worth property with a number value of how much the card is worth
+//    - loop through array of suits
+//    - nested loop through array of ranks
+//    - assign value at index of ranks to new variable rank
+//    - assign value at index of suits to new variable suit
+//    - assign value at index of ranks to new variable worth
+//    - if rank value is a string
+//      - if length of ranks at j is less than or equal to 4
+//      - assign 10 to worth variable
+//      - else assign 11 to worth variable
+// push the card (createCard function with rank suit and worth as arguments) into the cards array creating the deck of cards
 // 3. Shuffle the deck.
 //    - create a new function definition named shuffleThenDeal with the parameter of cards
 //    - create an empty array and assign it to a new variable named hand
