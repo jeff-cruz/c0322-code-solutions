@@ -4,7 +4,7 @@ let nextID = 1;
 const grades = {};
 
 app.listen(3000, () => {
-  console.log('Listening on port 3000.');
+  // console.log('Listening on port 3000.');
 });
 
 app.get('/api/grades', (req, res) => {
@@ -20,7 +20,7 @@ app.use(express.json());
 app.post('/api/grades', (req, res) => {
   const grade = req.body;
   grade.id = nextID;
-  grades[grade] = nextID;
+  grades[nextID] = grade;
   nextID++;
   res.status(201).send(grade);
 });
