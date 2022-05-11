@@ -1,5 +1,7 @@
-select "a"."line1" as "addresses",
-      "c"."name" as "cities",
-      "a"."district"
-  from "addresses" as "a"
-join "cities" as "c" using ("cityId");
+select "addresses"."line1",
+      "cities"."name",
+      "addresses"."district",
+      "countries"."name"
+  from "addresses"
+join "cities" using ("cityId")
+join "countries" using ("countryId");
