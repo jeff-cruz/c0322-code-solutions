@@ -7,12 +7,14 @@ class Student {
   }
 
   getFullName() {
-    return `${this.firstName} ${this.lastName}`;
+    const { firstName, lastName } = this;
+    return `${firstName} ${lastName}`;
   }
 
   getIntroduction() {
+    const { subject } = this;
     const fullName = this.getFullName();
-    return `Hello, my name is ${fullName} and I am studying ${this.subject}.`;
+    return `Hello, my name is ${fullName} and I am studying ${subject}.`;
   }
 }
 
