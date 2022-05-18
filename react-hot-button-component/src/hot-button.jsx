@@ -1,45 +1,43 @@
 import React from 'react';
 
-let clicks = 0;
-
 class HotButton extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { clickNumber: clicks };
+    this.state = { clicks: 0 };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    this.setState({ clickNumber: clicks++ });
+    this.setState({ clicks: this.state.clicks + 1 });
   }
 
   render() {
-    if (this.state.clickNumber < 3) {
+    if (this.state.clicks < 3) {
       return (
       <button onClick = {this.handleClick}>Hot Button</button>
       );
-    } else if (this.state.clickNumber < 6) {
+    } else if (this.state.clicks < 6) {
       return (
         <button className="purple white-text" onClick={this.handleClick}>Hot Button</button>
       );
-    } else if (this.state.clickNumber < 9) {
+    } else if (this.state.clicks < 9) {
       return (
         <button className="light-purple white-text" onClick={this.handleClick}>Hot Button</button>
       );
-    } else if (this.state.clickNumber < 12) {
+    } else if (this.state.clicks < 12) {
       return (
         <button className="salmon white-text" onClick={this.handleClick}>Hot Button</button>
       );
-    } else if (this.state.clickNumber < 15) {
+    } else if (this.state.clicks < 15) {
       return (
         <button className="orange black-text" onClick={this.handleClick}>Hot Button</button>
       );
-    } else if (this.state.clickNumber < 18) {
+    } else if (this.state.clicks < 18) {
       return (
         <button className="yellow black-text" onClick={this.handleClick}>Hot Button</button>
       );
-    } else if (this.state.clickNumber >= 18) {
+    } else if (this.state.clicks >= 18) {
       return (
         <button className="white black-text" onClick={this.handleClick}>Hot Button</button>
       );
