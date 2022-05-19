@@ -1,0 +1,41 @@
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.on {
+  justify-content: end;
+  background-color: green;
+}
+
+.off {
+  justify-content: flex-start;
+  background-color: rgb(213 213 213);
+}
+
+.slider {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 60%;
+  background-color: rgb(255 255 255);
+  border: 0.1rem solid black;
+}
+
+.slider-background {
+  display: flex;
+  align-items: center;
+  height: 3em;
+  width: 6em;
+  border: 0.1rem solid black;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.text {
+  font-size: 10rem;
+  padding: 2rem;
+  font-family: "Luxurious Script", cursive, sans-serif;
+}
