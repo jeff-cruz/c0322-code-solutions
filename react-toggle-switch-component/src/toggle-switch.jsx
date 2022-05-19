@@ -20,9 +20,12 @@ class ToggleSwitch extends React.Component {
   }
 
   render() {
+    const toggleClass = this.state.text === 'On'
+      ? 'slider-background on'
+      : 'slider-background off';
     return (
       <div className = "row">
-        <div onClick={ this.handleClick } className={this.state.toggle }>
+        <div onClick={ this.handleClick } className={ toggleClass }>
           <div className = "slider"></div>
         </div>
         <p className = "text">{ this.state.text }</p>
