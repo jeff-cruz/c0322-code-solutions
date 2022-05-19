@@ -16,9 +16,7 @@ class ToggleSwitch extends React.Component {
 
   render() {
     return (
-      <button onClick = { this.handleClick }>
-        {this.state.isClicked ? 'On' : 'Off'};
-      </button>
+
     );
   }
 }
