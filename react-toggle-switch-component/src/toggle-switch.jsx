@@ -4,7 +4,6 @@ class ToggleSwitch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      toggle: 'slider-background on',
       text: 'On'
     };
 
@@ -12,7 +11,7 @@ class ToggleSwitch extends React.Component {
   }
 
   handleClick() {
-    if (this.state.toggle === 'slider-background on') {
+    if (this.state.text === 'On') {
       this.setState({ toggle: 'slider-background off', text: 'Off' });
     } else {
       this.setState({ toggle: 'slider-background on', text: 'On' });
@@ -22,7 +21,7 @@ class ToggleSwitch extends React.Component {
   render() {
     const toggleClass = this.state.text === 'On'
       ? 'slider-background on'
-      : 'slider-background off';
+      : 'slider-background ';
     return (
       <div className = "row">
         <div onClick={ this.handleClick } className={ toggleClass }>
