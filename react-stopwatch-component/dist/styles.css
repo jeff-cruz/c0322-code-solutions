@@ -5,22 +5,7 @@
   justify-content: center;
   align-items: center;
   align-content: center;
-}
-
-.circle {
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  background: white;
-  border: 5px solid black;
   text-align: center;
-  font-size: 5rem;
-  font-family: "Courier New", Courier, monospace;
-}
-
-p {
-  position: absolute;
-  font-size: 3rem;
 }
 
 .row {
@@ -31,8 +16,22 @@ p {
   align-items: center;
 }
 
+.circle {
+  border-radius: 50%;
+  width: 500px;
+  height: 500px;
+  background: white;
+  border: 5px solid black;
+  text-align: center;
+}
+
+p {
+  position: absolute;
+  font-size: 10rem;
+}
+
 i {
-  font-size: 2rem;
+  font-size: 5rem;
 }
 
 button {

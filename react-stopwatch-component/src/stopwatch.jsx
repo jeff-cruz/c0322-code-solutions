@@ -4,7 +4,7 @@ class StopWatch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0,
+      counter: 0,
       status: 'inactive',
       icon: 'fa-solid fa-play'
     };
@@ -13,30 +13,30 @@ class StopWatch extends React.Component {
     this.handleResetClick = this.handleResetClick.bind(this);
   }
 
-  tick() {
-    let seconds = this.state.count;
-    this.setState({ count: seconds++ });
+  count() {
+    let seconds = this.state.counter;
+    this.setState({ counter: ++seconds });
   }
 
   handleStartClick() {
     if (this.state.status === 'inactive') {
+      this.intervalID = setInterval(() => this.count(), 1000);
       this.setState({
         status: 'active',
         icon: 'fa-solid fa-pause'
       });
-      this.intervalID = setInterval(() => this.tick(), 1000);
     } else if (this.state.status === 'active') {
+      clearInterval(this.intervalID);
       this.setState({
         status: 'inactive',
         icon: 'fa-solid fa-play'
       });
-      clearInterval(this.intervalID);
     }
   }
 
   handleResetClick() {
     if (this.state.status === 'inactive') {
-      this.setState({ count: 0 });
+      this.setState({ counter: 0 });
     }
   }
 
@@ -44,7 +44,8 @@ class StopWatch extends React.Component {
     return (
       <div className='container'>
         <div className='row'>
-          <button onClick={this.handleResetClick} className='circle'>{this.state.count}</button>
+          <p>{this.state.counter}</p>
+          <button onClick={this.handleResetClick} className='circle'></button>
         </div>
         <div className='row'>
           <button onClick={this.handleStartClick}>
