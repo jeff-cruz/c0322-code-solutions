@@ -5,8 +5,7 @@ class StopWatch extends React.Component {
     super(props);
     this.state = {
       counter: 0,
-      status: 'inactive',
-      icon: 'fa-solid fa-play'
+      status: 'inactive'
     };
 
     this.handleStartClick = this.handleStartClick.bind(this);
@@ -41,6 +40,9 @@ class StopWatch extends React.Component {
   }
 
   render() {
+    const iconClass = this.state.status === 'inactive'
+      ? 'fa-solid fa-play'
+      : 'fa-solid fa-pause';
     return (
       <div className='container'>
         <div className='row'>
@@ -49,7 +51,7 @@ class StopWatch extends React.Component {
         </div>
         <div className='row'>
           <button onClick={this.handleStartClick}>
-            <i className={this.state.icon}></i>
+            <i className={iconClass}></i>
           </button>
         </div>
       </div>
