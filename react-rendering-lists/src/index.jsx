@@ -25,6 +25,18 @@ function PokemonList(props) {
   );
 }
 
+/**
+ * const element = (
+ * <ul>
+ *  {
+ *    pokedex.map(pokemon => {
+ *     return <li> key={pokemon.number}>{pokemon.name}</li>;
+ *    })
+ *  }
+ * </ul>
+ * );
+ */
+
 const container = document.querySelector('#root');
 const root = ReactDOM.createRoot(container);
 root.render(<PokemonList pokedex={pokedex} />);
