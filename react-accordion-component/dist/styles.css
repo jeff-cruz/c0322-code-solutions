@@ -1,0 +1,42 @@
+.hidden {
+  display: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  width: 20rem;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.topic {
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+.details {
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+li:active {
+  transform: translateY(2px);
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
