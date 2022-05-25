@@ -97,7 +97,7 @@ export default class App extends React.Component {
     })
       .then(res => res.json())
       .then(updateTodo => {
-        const previousToDos = this.state.todos;
+        const previousToDos = this.state.todos.slice();
         previousToDos[index] = updateTodo;
         this.setState({ todos: previousToDos });
       })
