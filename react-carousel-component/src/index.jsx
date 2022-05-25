@@ -6,27 +6,27 @@ const pokedex = [
   {
     id: 1,
     name: 'Bulbasaur',
-    src: '../dist/images/001.png'
+    src: '../images/001.png'
   },
   {
     id: 2,
     name: 'Charmander',
-    src: '../dist/images/004.png'
+    src: '../images/004.png'
   },
   {
     id: 3,
     name: 'Squirtle',
-    src: '../dist/images/007.png'
+    src: '../images/007.png'
   },
   {
     id: 4,
     name: 'Pikachu',
-    src: '../dist/images/025.png'
+    src: '../images/025.png'
   },
   {
     id: 5,
     name: 'Jigglypuff',
-    src: '../dist/images/039.png'
+    src: '../images/039.png'
   }
 ];
 

@@ -12,16 +12,42 @@ class Carousel extends React.Component {
     this.handleDotClick = this.handleDotClick.bind(this);
   }
 
-  handleNext(event) {
-
+  componentDidMount() {
+    this.timer = setInterval(() => this.handleNext(), 2000);
   }
 
-  handlePrevious(event) {
+  handleNext() {
+    clearInterval(this.timer);
+    this.componentDidMount();
 
+    if (this.state.currentImage >= this.props.pokedex.length) {
+      this.setState({ currentImage: 1 });
+    } else {
+      this.setState(prevState => ({
+        currentImage: prevState.currentImage + 1
+      }));
+    }
+  }
+
+  handlePrevious() {
+    clearInterval(this.timer);
+    this.componentDidMount();
+
+    if (this.state.currentImage <= 1) {
+      this.setState({ currentImage: this.props.pokedex.length });
+    } else {
+      this.setState(prevState => ({
+        currentImage: prevState.currentImage - 1
+      }));
+    }
   }
 
   handleDotClick(event) {
+    clearInterval(this.timer);
+    this.componentDidMount();
 
+    const id = parseInt(event.target.id);
+    this.setState({ currentImage: id });
   }
 
   render() {
@@ -36,7 +62,9 @@ class Carousel extends React.Component {
 
             <div className="col-70">
               {pokedex.map(pokemon => {
-                return (this.state.currentImage === pokemon.id);
+                return (this.state.currentImage === pokemon.id && (
+                  <img key={pokemon.id} src={pokemon.src} />
+                ));
               })}
             </div>
 
@@ -47,11 +75,13 @@ class Carousel extends React.Component {
 
           <div className="row">
             <div className="col-full center dot-container">
-              <i className="fas fa-circle button" id="0"></i>
-              <i className="far fa-circle button" id="1"></i>
-              <i className="far fa-circle button" id="2"></i>
-              <i className="far fa-circle button" id="3"></i>
-              <i className="far fa-circle button" id="4"></i>
+              {pokedex.map(pokemon => {
+                return (
+                  this.state.currentImage === pokemon.id
+                    ? <i onClick={this.handleDotClick} className="fas fa-circle button" id={pokemon.id}/>
+                    : <i onClick={this.handleDotClick} className="far fa-circle button" id={pokemon.id}/>
+                );
+              })}
             </div>
           </div>
         </div>
