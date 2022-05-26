@@ -74,7 +74,8 @@ app.post('/api/auth/sign-in', (req, res, next) => {
           res.status(200).json({ payload, token });
         })
         .catch(err => next(err));
-    });
+    })
+    .catch(err => next(err));
 });
 /**
    * Query the database to find the "userId" and "hashedPassword" for the "username".
