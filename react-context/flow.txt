@@ -1,0 +1,110 @@
+USER CAN SIGN UP
+- the user opens the sign up page
+    - constructor function is called, initializing local state
+        - an object is assigned to this.state with properties of:
+            - user with a value of null
+            - isAuthorizing with a value of true
+            - route with a value of the return of parseRoute(window.location.hash)
+    - rendered react element App to div element with the attribute id of value root
+
+
+- by clicking the sign-up button, the client sends a request to the server
+
+- componentDidMount() is invoked
+    - hashchange event is fired
+    - setState of route property to a new value of window.location.hash to sign-up
+
+- user fills out the form and clicks register which invokes handleSubmit
+    - sends a POST request to the server
+
+- setState updates
+    - the current state of route to a new value to the return of parseRoute(window.location.hash)
+    - the current state of user to a new value of user
+    - the current state of isAuthorizing to false
+
+- setState triggers a rerender
+    - the hashchange in the handleSubmit function triggers a viewswap in App to the sign-in page
+    - if the path property of the route object is not 'sign-in', the page displays 'create account to get started'
+
+- the server receives the request
+    - argon2.hash creates a hashedPassword sends the to the database with the user's username and hashedPassword
+
+- the database receives the request
+    - inserts the values of username and hashedPassword into the users table
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+USER CAN SIGN IN
+- the user opens the sign in page
+    - constructor function is called, initializing local state
+        - an object is assigned to this.state with properties of:
+            - user with a value of null
+            - isAuthorizing with a value of true
+            - route with a value of the return of parseRoute(window.location.hash)
+    - rendered react element App to div element with the attribute id of value root
+
+- by clicking the sign-in button, the client sends a request to the server
+
+- componentDidMount() is invoked
+    - hashchange event is fired
+    - setState updates route property to a new value of window.location.hash to sign-in
+
+- user fills out the form and clicks log in which invokes handleSubmit
+  - sends a POST request to the server
+  - fetches /api/auth/${action} where if action is not 'sign-up', the onSignIn method of the props property of this object is called with one argument result
+  - onSignIn is assigned to the value of the variable handleSignIn
+  - where handleSignIn is invoked
+
+- setState updates
+  - sets the value of the property user to the value of the variable token
+
+- setState triggers a rerender
+  - if the user property of the context property of this object is truthy
+  - the hashchange triggers a viewswap to Home and gets rickrolled
+
+- the server recives the request
+  - argon2 verifies the hashedPassword and password
+
+- the database receives the request
+    - which holds the values of username and hashedPassword in users
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+USER CAN STAY SIGNED IN
+- the user refreshes the page
+  - constructor function is called, initializing local state
+      - an object is assigned to this.state with properties of:
+            - user with a value of the user's token
+            - isAuthorizing with a value of false
+            - route with a value of the return of parseRoute(window.location.hash)
+      - rendered react element App to div element with the attribute id of value root
+
+- componentDidMount() is invoked
+    - hashchange event is fired
+    - setState updates route property to current value of window.location.hash
+
+- the state of user is does not change, the user property keeps the value of the variable token
+    - if the value of user is token, the user will always stay signed in
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+USER CAN SIGN OUT
+- the user is on the home page
+- constructor function is called, initializing local state
+      - an object is assigned to this.state with properties of:
+            - user with a value of the user's token
+            - isAuthorizing with a value of false
+            - route with a value of the return of parseRoute(window.location.hash)
+      - rendered react element App to div element with the attribute id of value root
+
+- componentDidMount() is invoked
+    - hashchange event is fired
+    - setState updates route property to current value of window.location.hash
+
+- the user clicks the sign out button and invokes handleSignOut
+    - the removeitem method on the localStorage property of the window object is called with the string 'react-context-jwt'
+
+- setState updates
+    - sets the value of the user property to null
+
+- setState triggers a rerender
+    - the hashchange event triggers a viewswap
+    - sets the current value of route to a new value of parseRoute(window.location.hash)
+
+- the user is back to the sign-in page
