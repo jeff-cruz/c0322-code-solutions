@@ -2,7 +2,7 @@
 
 function maxValue(stack) {
   let max = -Infinity;
-  if (stack.print() === 'Stack { <empty> }') {
+  if (typeof stack.peek() === 'undefined') {
     return max;
   } else {
     while (stack.peek() !== undefined) {
