@@ -1,0 +1,48 @@
+USER CAN SIGN UP
+User lands on the home page and clicks sign up
+  The client re-renders to the register now page
+  The user enters their username and password
+  The user clicks the submit button to register the client sends the network request through fetch
+The server receives the POST request
+  The server will check to see if the username or password input is empty
+  If empty, error is thrown to client
+  If not empty, the user inputted password is hashed
+  Once hashed, the username and password are inserted into the database
+After insertion, the database returns the username, userId and createdAt values
+The client receives a response from the server, changing the hash to sign-in
+  The app renders the page that has a path of 'sign-in'
+
+USER CAN SIGN IN
+User lands on the home page
+  The app invokes the componentDidMount method
+If there is no token in local storage, the user is not logged in
+    The client renders the home page
+    Since there is no user object, the redirect component changes the hash and directs the user to the sign in page
+    The auth form is rendered for the user to sign in
+    The user enters in their username and password info to the auth form
+    When user clicks the submit button to sign-in, client sends a network request through fetch
+  The server recives the POST request, if user's username and password input is empty, it will throw an error to client
+  If username and password fields are filled with the user's input,
+    The database is searched for a matching username
+    If there is no matching username, an error is thrown at client
+  The server verifies if the input password is valid
+    If the password is not matching the password of the user's username, an error is thrown at client
+  If both fields are found in the database, a response is sent to the client
+  The client receives the response, stores token into local storage and re-renders the page
+  The setState method is invoked setting the user in state to the user object received by the server
+  Since there is a user object in user, client renders the home page
+
+USER CAN STAY SIGNED IN
+User is already signed in and local storage has the user's token from when they logged in
+  When the app is rendered, componentDidMount is invoked
+  componentDidMount checks local storage if there is a token
+  If the token is present and null is not assigned to user in state
+    Then the home page is rendered to have the user be rick rolled
+  If the token is not present, the user is redirected to the sign in page
+
+USER CAN SIGN OUT
+User clicks on the sign out button
+  handleSignOut is invoked
+  The user's token in local storage is removed from local storage
+  The user's state is set to null
+The home page re-renders and the user gets redirected to the sign in page
